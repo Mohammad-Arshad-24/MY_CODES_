@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int num,i,a[1000];
+    scanf("%d", &num);  //Enter the number of values you wish to enter 
+     for(i=1;i<=num;i++)
+     {
+         scanf("%d",&a[i]); //Enter the values
+     }
+     for(i=num;i>0;i--)
+     {
+         printf("%d ",a[i]);
+     }
+     
+     
+    return 0;
+}
