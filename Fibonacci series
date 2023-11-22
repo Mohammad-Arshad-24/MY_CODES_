@@ -1,0 +1,21 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int i,c=1,d=0,e,n;
+    cout<<"Enter the number you want to run the loop"<<endl;
+    cin>>n;
+    cout<<"Fibonacci series begin"<<endl;
+    cout<<"0"<<endl;
+    for(i=1;i<=n;i++)
+    {
+        e=c+d;
+        c=d;
+        d=e;
+        cout<<e<<endl;
+    }
+
+    return 0;
+}
