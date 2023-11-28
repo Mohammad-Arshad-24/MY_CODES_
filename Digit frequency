@@ -1,0 +1,60 @@
+#include <stdio.h>
+#include<string.h>
+int main()
+ {
+    char inputString[1024];
+    int l,i,count=0;
+    int zero   =0;
+    int one=0;
+    int two=0;
+    int three=0;
+    int four=0;
+    int five=0;
+    int six=0;
+    int seven=0;
+    int eight=0;
+    int nine=0;
+    scanf("%s",&inputString); //Enter any string
+    l=strlen(inputString);
+    for(i=0;i<=l-1;i++)
+    {
+      int c=inputString[i];
+       switch(c)
+       {
+          // ASCII values for 0 to 9 is from 48(0) to 57(9)
+          case 48: 
+          zero++;
+          break;
+          case 49:
+          one++;
+          break;
+          case 50:
+          two++;
+          break;
+          case 51:
+          three++;
+          break;
+          case 52:
+          four++;
+          break;
+          case 53:
+          five++;
+          break;
+          case 54:
+          six++;
+          break;
+          case 55:
+          seven++;
+          break;
+          case 56:
+          eight++;
+          break;
+          case 57:
+          nine++;
+            }
+        
+    }
+    printf("%d %d %d %d %d %d %d %d %d %d ",zero,one,two,three,four,five,six,seven,eight,nine);
+ 
+ return(0);
+}
