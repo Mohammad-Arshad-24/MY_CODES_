@@ -1,0 +1,30 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include<math.h>
+using namespace std;
+void ans(double n)
+{ 
+    int u,d;
+    d=floor(n);
+    u=ceil(n);
+    int t=n*10;
+    int c=t%10;
+    if(c>=5)
+    {
+    cout<<"The round  off number is "<<u;
+    } 
+    else
+    cout<<"The round off number is "<<d;
+}
+int main() {
+    // Write C++ code here
+    double n;
+    cout << "Enter a number";
+    cin>>n;
+    ans(n);
+    
+    
+    
+    
+    return 0;
+}
