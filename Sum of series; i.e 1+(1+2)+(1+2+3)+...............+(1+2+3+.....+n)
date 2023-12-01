@@ -1,0 +1,24 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+int main() 
+{
+ int n,tsum=0,i,j;
+ cout<<"Enter any number"<<endl;
+ cin>>n;
+ for(int i=1;i<=n;i++)
+   {
+       int sum=0;
+    for(int j=1;j<=i;j++)
+    { 
+      sum=sum+j;
+
+    }
+     
+    tsum=tsum+sum;
+   }
+cout<<"The sum of the above series is "<<tsum;
+
+    
+    return 0;
+}
