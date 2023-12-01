@@ -1,0 +1,31 @@
+#include <iostream>
+#include <cstring>
+#include <cctype>
+
+using namespace std;
+
+int main() {
+    int u = 0, s = 0,e=0, i, l;
+    char str[1024];
+
+    cout << "Enter any string: ";
+    cin.getline(str, sizeof str);
+    l = strlen(str);
+    for (i = 0; i < l; i++) {
+        if (str[i] >= 65 && str[i] < 97) {
+            u++;
+        }
+        if (str[i] >= 97 && str[i] <= 122) {
+            s++;
+        }
+        if(str[i]==' ')
+        {
+            e++;
+        }
+    }
+    cout << "Total letters are: " << l << endl;
+    cout << "Upper case letters are: " << u << endl;
+    cout << "Lower case letters are: " << s << endl;
+    cout << "Total spaces are "<<e<<endl;
+    return 0;
+}
