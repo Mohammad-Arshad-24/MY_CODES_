@@ -1,0 +1,34 @@
+#include <iostream>
+
+using namespace std;
+
+class Solution {
+public:
+    void twoSum(int nums[], int size, int target) {
+        for (int i = 0; i < size; ++i) {
+            for (int j = i + 1; j < size; ++j) {
+                if (nums[i] + nums[j] == target) {
+                    cout << "[" << i << ", " << j << "]" << endl;
+                }
+            }
+        }
+    }
+};
+
+int main() {
+    Solution s;
+    int target;
+    int nums[1000];
+
+     cout << "Enter array elements (enter 0 to stop): ";
+    int num;
+    int size = 0;
+    while (cin >> num && num != 0) {
+        nums[size++] = num;
+    }
+   cout << "Enter the target number: ";
+    cin >> target;
+    s.twoSum(nums, size, target);
+
+    return 0;
+}
