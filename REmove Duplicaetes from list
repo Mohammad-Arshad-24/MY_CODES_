@@ -1,0 +1,18 @@
+import math 
+class Solution:
+    def remove_dup(self,nums:list[int]):
+        dup=sorted(set(nums))
+        return dup
+    def under_scorerep(self,nums:list[int],dup_value:list[int]):
+        m=len(nums)
+        n=len(dup_val)
+        undrscr=m-n
+        for i in range(undrscr):
+            dup_val.append('_')
+        return dup_val
+nums=[1,1,2,2,2,3,3,3,3,0]
+sol=Solution()
+dup_val=sol.remove_dup(nums)
+actual_set=sol.under_scorerep(nums,dup_val)
+actual_set=','.join(map(str,actual_set)).replace('\'_','_').replace('_\'','_')
+print(f"[{actual_set}]")
