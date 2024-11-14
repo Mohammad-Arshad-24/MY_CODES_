@@ -1,0 +1,32 @@
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        compr = ''
+        chchk = []
+        l = len(strs)
+        
+        if l == 0:
+            return ""
+        
+        # Take the first word in the list and use it as the reference for the prefix
+        word = strs[0]
+        
+        for j in word:
+            chchk.append(j)
+        
+        for i in range(1, l):
+            word = strs[i]
+            new_compr = ''
+            # Check each character in the prefix with the current word
+            for j in range(min(len(word), len(chchk))):
+                if word[j] == chchk[j]:
+                    new_compr += word[j]
+                else:
+                    break
+            chchk = list(new_compr)  # Update the common prefix
+        
+        # Return the common prefix found
+        return ''.join(chchk)
+strs=['flower','flight','flow']
+sol=Solution()
+print(sol.LongestCommomPrefix(strs))
+#output that we will be getting is 'fl' for this input 
