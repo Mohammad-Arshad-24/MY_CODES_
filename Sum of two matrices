@@ -1,0 +1,35 @@
+import os
+r=int(input("Enter the row number for matrix A and B"))
+c=int(input("Enter the column number for matrix A and B"))
+sum_mat=[]
+ma=[]
+mb=[]
+for i in range(r):
+    row=[]
+    for j in range(c):
+        print(f"Enter the element for {i} and {j} ",end='')
+        e=int(input())
+        row.append(e)
+    ma.append(row)
+os.system('cls')
+print("For B Matrix")
+for i in range(r):
+    row=[]
+    for j in range(c):
+        print(f"Enter the element for {i} and {j} ",end='')
+        e=int(input())
+        row.append(e)
+    mb.append(row)
+os.system('cls')
+for i in range(r):
+    sum_row=[]
+    for j in range(c):
+        sum_row.append(ma[i][j]+mb[i][j])
+    sum_mat.append(sum_row)
+for i in range(r):
+    print("[",end=' ')
+    for j in range(c):
+        print(f"{sum_mat[i][j]}",end=' ')
+        if(j==c-1):
+            print("]")
+    print()
