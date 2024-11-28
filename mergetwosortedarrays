@@ -1,0 +1,9 @@
+class Solution:
+    def merge(self, nums1: list[int], m: int, nums2: list[int], n: int) -> None:
+        anum = nums1[:m]
+        bnum = nums2
+        anum.extend(bnum)
+        anum.sort()
+        for i in range(len(anum)):
+            nums1[i] = anum[i]
+        return nums1
