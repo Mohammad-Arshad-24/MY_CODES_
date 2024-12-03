@@ -1,0 +1,8 @@
+class Solution:
+    def findDuplicate(self, nums: List[int]) -> int:
+        ifin=set()
+        for e in nums:
+            if e in ifin:
+                return e
+            else:
+                ifin.add(e)
