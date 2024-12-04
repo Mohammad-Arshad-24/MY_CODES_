@@ -1,0 +1,15 @@
+scores=[]
+card={}
+for i in range(int(input("Enter the no.of students"))):
+        name,*line=input("Enter name and marks").split()
+        scores=list(map(float,line))
+        card[name]=scores
+print(card)
+chk=input("enter name you want to check")
+print(card[chk])
+t=0
+for scores in card[chk]:
+        t+=scores
+print(t)
+per=t/3
+print(f"{per:.2f}")
