@@ -1,0 +1,17 @@
+student=[]
+for i in range(int(input("Enter number"))):
+        name = input("enter the name of the student")
+        score = float(input("enter the marks "))
+        student.append([name,score])
+grade=[score for name,score in student]
+print(grade)
+grade.remove(max(grade))
+grade.sort()
+print(grade)
+mxm=max(grade)
+print(mxm)
+stm=[]
+for name,score in student:
+        if score==mxm:
+                stm.append(name)
+print(','.join(stm))
