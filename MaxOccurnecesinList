@@ -1,0 +1,13 @@
+class Solution:
+    def majorityElement(self, nums):
+        di={}
+        s=set(nums)
+        for elements in s:
+            n=nums.count(elements)
+            di[elements]=n
+        max=0
+        for k,v in di.items():
+            if v>max:
+                max=v
+                mi=k
+        return mi
