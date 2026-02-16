@@ -1,0 +1,29 @@
+class Solution {
+    public String mergeAlternately(String word1, String word2) {
+
+        int i = 0;
+        int j = 0;
+        char[] w1=word1.toCharArray();
+        char[] w2=word2.toCharArray();
+        ArrayList<Character> res = new ArrayList<>();
+            while (i < word1.length() && j < word2.length()) {
+            res.add(w1[i]);
+            res.add(w2[j]);
+            i++;
+            j++;
+        }
+        while (i < word1.length()) {
+            res.add(w1[i]);
+            i++;
+        }
+        while (j < word2.length()) {
+            res.add(w2[j]);
+            j++;
+        }
+        char[] fres=new char[res.size()];
+        for(int k=0;k<res.size();k++){
+            fres[k]=res.get(k);
+        }
+        return new String(fres);
+    }
+}
