@@ -1,0 +1,32 @@
+class Solution {
+    public boolean isSubsequence(String s, String t) {
+        
+char[] a=s.toCharArray();
+     char[] b=t.toCharArray();
+     int idx=0;
+     
+     for(int i=0;i<s.length();i++){
+        boolean exist=false;
+        char bs=a[i];
+        for(int j=idx;j<t.length();j++){
+            System.out.println(bs+" "+b[j]+" "+j+" "+idx);
+            if(b[j]==bs){
+                if(j>=idx){
+                    idx=j+1;
+                    exist=true;
+                    break;
+                }
+                else{
+                return false;
+            }
+            }
+            
+        }
+        if(!exist){
+            return false;
+        }
+     }
+     return true;  
+    } 
+
+    }
