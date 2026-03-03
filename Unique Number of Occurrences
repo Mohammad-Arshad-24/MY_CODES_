@@ -1,0 +1,27 @@
+import java.util.ArrayList;
+class Solution {
+    public boolean uniqueOccurrences(int[] arr) {
+        ArrayList<Integer> res1=new ArrayList<>();
+        HashMap <Integer,Integer> res=new HashMap<>();
+        for(int i=0;i<arr.length;i++){
+            if(res.containsKey(arr[i])){
+                res.put(arr[i],res.get(arr[i])+1);
+            }
+            else{
+                res.put(arr[i],1);
+            }
+        }
+            for(Integer vals:res.values()){
+                res1.add(vals);
+            }
+            System.out.println(res1);
+            for(int i=0;i<res1.size();i++){
+                for(int j=i+1;j<res1.size();j++){
+                    if(res1.get(i).equals(res1.get(j))){
+                        return false;
+                    }
+            }}
+            return true;
+        }
+        
+        }
