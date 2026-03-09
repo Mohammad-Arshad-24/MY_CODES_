@@ -1,0 +1,13 @@
+class Solution {
+    public int minCost(int n) {
+        int x=0;
+        int spl=1;
+        int cost=0;
+        while(n>1){
+            x=n-spl;
+            cost+=x;
+            n--;
+        }
+        return cost;
+    }
+}
