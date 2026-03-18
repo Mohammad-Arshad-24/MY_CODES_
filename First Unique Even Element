@@ -1,0 +1,23 @@
+class Solution {
+    public int firstUniqueEven(int[] nums) {
+        HashMap<Integer,Integer> eve=new HashMap<>();
+        for(int i =0;i<nums.length;i++){
+            if(nums[i]%2==0){
+            if(eve.containsKey(nums[i])){
+                int ct=eve.get(nums[i]);
+                eve.put(nums[i],ct+1);
+            }
+            else{
+                eve.put(nums[i],1);
+            }
+        }
+        }
+         for(int i = 0; i < nums.length; i++){
+            if(nums[i] % 2 == 0 && eve.get(nums[i]) == 1){
+                return nums[i];
+            }
+        }
+        return -1;
+
+    }
+}
