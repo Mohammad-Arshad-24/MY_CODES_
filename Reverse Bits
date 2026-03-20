@@ -1,0 +1,29 @@
+class Solution {
+    public int reverseBits(int n) {
+        String bin="";
+        int sum=0;
+        int count=0;
+        while(count <32){
+            int rem=n%2;
+            bin=rem+bin;
+            n=n/2;
+            count ++;
+        }
+        char[] c=bin.toCharArray();
+        char[] r=new char[c.length];
+        int p=0;
+        for(int i=c.length-1;i>=0;i--){
+            r[p]=c[i];
+            p++;
+        }
+        p=0;
+        for(int i=c.length-1;i>=0;i--){
+            if(r[i]=='1'){
+                sum+=Math.pow(2,p);
+              
+            }
+              p++;
+        }
+        return sum;
+    }
+}
