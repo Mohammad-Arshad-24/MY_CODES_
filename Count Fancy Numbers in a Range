@@ -1,0 +1,46 @@
+High Time Complexity
+
+class Solution {
+    long sum(long n){
+     long sumval=0;
+            while(n>0){
+                long temp = n%10;
+                sumval+=temp;
+                n=n/10;
+            } 
+        return sumval;
+    }
+    boolean mono(long n){
+        boolean incr=true,decr=true;
+        long next=n%10;
+        n/=10;
+         while(n>0){
+             long curr=n%10;
+             if(next>=curr){incr=false;}
+             if(next<=curr){decr=false;}
+             next=curr;
+             n/=10;
+         }
+        return incr || decr;
+    }
+
+    public long countFancy(long l, long r) {
+        int c=0;
+        for(long i =l;i<=r;i++){
+            if(mono(i)){
+                c++;
+            }
+            else{
+                if(mono(sum(i))){
+                    c++;
+                }
+            }
+        }
+          
+    
+        return c;
+    }
+}
+
+
+
