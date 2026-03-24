@@ -1,0 +1,73 @@
+//using biginteger datatype(has no limit) (works on leetcode)
+import java.math.BigInteger;
+class Solution {
+    public String addBinary(String a, String b) {
+        char [] c=a.toCharArray();
+        char [] d=b.toCharArray();
+         BigInteger q = BigInteger.ZERO;
+        BigInteger w = BigInteger.ZERO;
+        int k=0;
+        for(int i=c.length-1;i>=0;i--){
+            if(c[i]=='1'){
+                q = q.add(BigInteger.valueOf(2).pow(k));
+               
+            }
+             k++;
+        }  
+        k=0;      
+        for(int i=d.length-1;i>=0;i--){
+            if(d[i]=='1'){
+                w = w.add(BigInteger.valueOf(2).pow(k));
+            }
+             k++;
+        }
+        BigInteger f = q.add(w);
+        System.out.println(q);
+        System.out.println(w);
+       
+        return f.toString(2);
+    }
+}
+
+
+
+//run time error as used long and has memory limit 
+class Solution {
+    public String addBinary(String a, String b) {
+        char [] c=a.toCharArray();
+        char [] d=b.toCharArray();
+        double q=0.0;
+        double w=0.0;
+        long k=0;
+        for(int i=c.length-1;i>=0;i--){
+            if(c[i]=='1'){
+                q=q+Math.pow(2,k);
+               
+            }
+             k++;
+        }  
+        k=0;      
+        for(int i=d.length-1;i>=0;i--){
+            if(d[i]=='1'){
+                w=w+Math.pow(2,k);
+            }
+             k++;
+        }
+        long f=(int)(q+w);
+        System.out.println(q);
+        System.out.println(w);
+        long num=f;
+        if(num==0){
+            return "0";
+        }
+        String bin="";
+        long rem=0;
+        System.out.println(num +" "+f);
+        while(num>0){
+            rem=num%2;
+            bin=rem+bin;
+            num/=2;
+        }
+        return bin;
+    }
+}
