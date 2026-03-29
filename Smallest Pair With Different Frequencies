@@ -1,0 +1,31 @@
+class Solution {
+    public int[] minDistinctFreqPair(int[] nums) {
+        HashMap<Integer,Integer> h=new HashMap<>();
+        int [] arr=new int[2];
+        if(nums.length==1 || nums.length==2){
+            return new int[]{-1, -1};
+        }
+        for(int i=0;i<nums.length;i++){
+            if(h.containsKey(nums[i])){
+                h.put(nums[i],h.get(nums[i])+1);
+            }
+            else{
+                h.put(nums[i],1);
+            }
+        }
+        ArrayList<Integer> l=new ArrayList<>(h.keySet());
+        Collections.sort(l);
+        for(int i=0;i<l.size();i++){
+            for(int j=i+1;j<l.size();j++){
+                int x =l.get(i);
+                int y =l.get(j);
+                
+                if(h.get(x)!=h.get(y)){
+                    return new int[]{x,y};
+                }
+            }
+            
+        }
+        return new int[]{-1, -1};
+    }
+}
