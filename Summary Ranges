@@ -1,0 +1,23 @@
+class Solution {
+    public List<String> summaryRanges(int[] nums) {
+       ArrayList<String> res=new ArrayList<>();
+       if(nums.length==0){return res;} 
+       int s=nums[0];
+       for(int i=1;i<=nums.length;i++){
+            if(i==nums.length || nums[i]!=nums[i-1]+1){
+                int e=nums[i-1];
+       if(s==e){
+        res.add(String.valueOf(s));
+       }
+        else{
+            res.add(String.valueOf(s+"->"+e));
+        }
+        if(i<nums.length){
+            s=nums[i];
+        }
+            }
+        
+       }
+       return res;
+    }
+}
