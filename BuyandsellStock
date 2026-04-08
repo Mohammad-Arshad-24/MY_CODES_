@@ -1,3 +1,24 @@
+class Solution {
+    public int maxProfit(int[] prices) {
+        int [] res=new int[prices.length];
+        int max=0,prof=0;
+        int pr=prices[0];
+        for(int i=0;i<prices.length;i++){
+            if(prices[i]<pr){
+                pr=prices[i];
+            }
+            else{
+                max=prices[i]-pr;
+                prof=Math.max(max,prof);
+            }   
+        }
+        return prof;
+    }
+}
+
+
+
+---------------------------------------------------------------------------------------
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         chk_till = len(prices)
