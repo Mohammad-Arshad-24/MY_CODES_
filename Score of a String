@@ -1,0 +1,14 @@
+class Solution {
+    public int scoreOfString(String s) {
+        int sum=0;
+        int tsum=0;
+        int prev=0;
+        char[] c=s.toCharArray();
+        for(int i=1;i<s.length();i++){
+            sum=Math.abs(c[i-1]-c[i]);
+            tsum+=sum;
+            sum=0;
+        }
+        return tsum;
+    }
+}
