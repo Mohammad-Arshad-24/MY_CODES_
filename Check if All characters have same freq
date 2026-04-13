@@ -1,0 +1,29 @@
+class Solution {
+    public boolean areOccurrencesEqual(String s) {
+        HashMap<Character,Integer> h=new HashMap<>();
+        char[] c=s.toCharArray();
+            for(int i=0;i<s.length();i++){
+                if(h.containsKey(c[i])){
+                    h.put(c[i],h.get(c[i])+1);
+                }
+                else{
+                    h.put(c[i],1);
+                }
+            }
+            ArrayList<Integer> a=new ArrayList<>();
+            for(char key : h.keySet()){
+                a.add(h.get(key));
+
+            }
+            System.out.println(a);
+            int in=0;
+            
+            for(int i=1;i<a.size();i++){
+                if(!a.get(in).equals(a.get(i))){
+                    return false;
+                }
+            }
+
+return true;
+    }
+}
