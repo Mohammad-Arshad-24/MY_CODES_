@@ -1,0 +1,21 @@
+class Solution {
+    public int[] countBits(int n) {
+        ArrayList<Integer> ar = new ArrayList<>();
+        ar.add(0);
+        for (int i = 1; i <= n; i++) {
+            int c = 0;
+            int curr = i;
+            while (curr > 0) {
+                int r = curr % 2;
+                curr = curr / 2;
+                if (r == 1) {c++;}
+            }
+            ar.add(c);
+        }
+        int[] res = new int[ar.size()];
+        for (int i = 0; i < ar.size(); i++) {
+            res[i] = ar.get(i);
+        }
+        return res;
+    }
+}
