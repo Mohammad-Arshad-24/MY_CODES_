@@ -1,0 +1,32 @@
+class Solution {
+    public int maxDistance(int[] colors) {
+        int left=0;
+        int max=0;
+        int right=colors.length-1;
+        while(left<=right){
+            if(colors[left]!=colors[right]){
+                if(Math.abs(left-right)>max){
+                    max=Math.abs(left-right);
+                }  
+                right--;
+            }
+            else{
+                right--;
+            }
+        }
+        left=0;
+        right=colors.length-1;
+         while(left<=right){
+            if(colors[left]!=colors[right]){
+                if(Math.abs(left-right)>max){
+                    max=Math.max(max,Math.abs(left-right));
+                }  
+                left++;
+            }
+            else{
+                left++;
+            }
+        }
+        return max;
+    }
+}
