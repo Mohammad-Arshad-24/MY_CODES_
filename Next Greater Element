@@ -1,0 +1,39 @@
+class Solution {
+    public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+        ArrayList<Integer> a=new ArrayList<>();
+        int c=0;
+        int idx=-1;
+        boolean found=false;
+        for(int i = 0;i<nums2.length;i++){
+            if (c>=nums1.length){break;}
+            else if (!found && nums2[i]==nums1[c]) {
+                idx = i;
+                found = true;
+            }
+            else if (found && nums2[i] > nums1[c]) {
+                a.add(nums2[i]);
+                c++;
+                i = -1;
+                idx = -1;
+                found = false;
+            }
+            if (i == nums2.length - 1 && found) {
+                a.add(-1);
+                c++;
+                i = -1;
+                idx = -1;
+                found = false;
+            }
+            else if (i == nums2.length - 1 && !found) {
+                a.add(-1);
+                c++;
+                i = -1;
+            }
+        }
+            int[] res= new int[a.size()];
+            for(int i= 0;i<a.size();i++){
+                res[i]=a.get(i);
+            }
+            return res;
+                }
+}
