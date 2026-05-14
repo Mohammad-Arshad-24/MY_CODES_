@@ -1,0 +1,12 @@
+class Solution {
+    public int reverseDegree(String s) {
+       int sum=0;
+       int i=1;
+       for(char c : s.toCharArray()){
+        int curr = ('z' - c + 1)*i;
+        sum+=curr; 
+        i++;
+       }
+    return sum;
+    }
+}
