@@ -1,0 +1,14 @@
+class Solution {
+    public int hammingDistance(int x, int y) {
+        int c=0;
+        while(x>0 || y>0){
+            int r=x%2;
+            int t=y%2;
+            if(r!=t){
+                c++;}
+            x/=2;
+            y/=2;
+        }
+        return c;
+        }
+}
