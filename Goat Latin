@@ -1,0 +1,22 @@
+class Solution {
+    public String toGoatLatin(String sentence) {
+        String res="";
+        int i=1;
+        for(String words : sentence.split(" ")){
+            String cw=words;
+            String chk=words.toLowerCase();
+            if(chk.charAt(0) == 'a' || chk.charAt(0) == 'e' || chk.charAt(0) == 'i' || chk.charAt(0) == 'o' || chk.charAt(0) == 'u'){
+                cw=cw+"ma"+"a".repeat(i);
+            }
+            else{
+                char carry=words.charAt(0);
+                if(words.length()!=1){
+                cw=words.substring(1,words.length())+carry+"ma"+"a".repeat(i);}
+                else{cw=words+"ma"+"a".repeat(i);}
+            }
+            i++;
+            res=res+cw+" ";
+        }
+        return res.trim();
+    }
+}
