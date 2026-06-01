@@ -1,0 +1,15 @@
+class Solution {
+    public int digitFrequencyScore(int n) {
+        HashMap<Integer,Integer> h=new HashMap<>();
+        while(n>0){
+            int curr=n%10;
+            h.put(curr,h.getOrDefault(curr,0)+1);
+            n=n/10;
+        }
+        int res=0;
+        for(int key : h.keySet()){
+            res+=key*h.get(key);
+        }
+        return res;
+    }
+}
