@@ -1,0 +1,25 @@
+class Solution {
+    public int maxFreqSum(String s) {
+        int maxv = 0;
+        int maxc = 0;
+        HashMap<Character, Integer> h = new HashMap<>();
+        for (char c : s.toCharArray()) {
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+                h.put(c, h.getOrDefault(c, 0) + 1);
+                if (h.get(c) > maxv) {
+
+                    maxv = h.get(c);
+                }
+            } else {
+                h.put(c, h.getOrDefault(c, 0) + 1);
+
+                if (h.get(c) > maxc) {
+                    maxc = h.get(c);
+                }
+            }
+
+        }
+        System.out.println(maxc + "   " + maxv);
+        return maxc + maxv;
+    }
+}
