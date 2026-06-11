@@ -1,0 +1,10 @@
+class Solution {
+    public int[] shuffle(int[] nums, int n) {
+        ArrayList<Integer> r=new ArrayList<>();
+        for(int i=0;i<n;i++){
+            r.add(nums[i]);
+            r.add(nums[i+n]);
+        }
+        return r.stream().mapToInt(Integer::intValue).toArray();
+    }
+}
