@@ -1,0 +1,12 @@
+class Solution {
+    public int minOperations(int[] nums, int k) {
+        ArrayList<Integer> a=new ArrayList<>();
+        for(int i : nums){
+            if(i>=k){
+                a.add(i);
+
+            }
+        }
+        return nums.length-a.size();
+    }
+}
