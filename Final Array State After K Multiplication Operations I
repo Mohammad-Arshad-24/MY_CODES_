@@ -1,0 +1,23 @@
+class Solution {
+    public int[] getFinalState(int[] nums, int k, int multiplier) {
+        int c=0;
+        while(c<k){
+        int idx=0;
+        int min=nums[0];
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]==min){
+                idx=Math.min(i,idx);
+                min=nums[i];
+            }
+            else if(nums[i]<min){
+                idx=i;
+                min=nums[i];
+            }
+        }
+        nums[idx]=nums[idx]*multiplier;
+        System.out.println(Arrays.toString(nums));
+        c++;
+        }
+        return nums;
+    }
+}
