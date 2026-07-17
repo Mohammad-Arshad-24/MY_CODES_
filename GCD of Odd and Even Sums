@@ -1,0 +1,21 @@
+class Solution {
+    public int gcdOfOddEvenSums(int n) {
+       n=n*2;
+       int esum=0;
+       int osum=0;
+       for(int i=1;i<=n;i++){
+            if(i%2==0){
+                esum+=i;
+            }
+            else{
+                osum+=i;
+            }
+       } 
+    while (osum != 0) {
+    int r = esum % osum;
+    esum = osum;
+    osum = r;
+    }
+return esum;
+    }
+}
