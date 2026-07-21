@@ -1,0 +1,15 @@
+class Solution {
+    public int countDigitOccurrences(int[] nums, int digit) {
+        char d=(char)('0'+digit);
+        int c=0;
+        for(int i=0;i<nums.length;i++){
+            String chk =""+nums[i];
+             for (int j=0;j<chk.length();j++) {
+                if (chk.charAt(j) == d) { 
+                    c++;
+                }
+            }
+        }
+    return c;
+    }
+}
