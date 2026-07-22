@@ -1,0 +1,20 @@
+class Solution {
+    public int[] separateDigits(int[] nums) {
+        String r="";
+        String f="";
+        for(int i=0;i<nums.length;i++){
+            int n=nums[i];
+            r="";
+            while(n>0){
+                int c=n%10;
+                r=c+r;
+                n=n/10;}
+            f=f+r;
+        }
+        int [] res = new int[f.length()];
+        for(int i=0;i<f.length();i++){
+            res[i] = Character.getNumericValue(f.charAt(i));
+        }
+        return res;
+    }
+}
