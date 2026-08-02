@@ -1,0 +1,17 @@
+class Solution {
+    public boolean checkGoodInteger(int n) {
+        boolean res=false;
+        int s=0;
+        int ds=0;
+        while(n>0){
+            int r=n%10;
+            s+=r;
+            ds+=r*r;
+            n/=10;
+        }
+        if(ds-s>=50){
+            res=true;
+        }
+        return res;
+    }
+}
