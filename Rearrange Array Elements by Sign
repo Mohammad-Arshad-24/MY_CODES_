@@ -1,0 +1,21 @@
+class Solution {
+    public int[] rearrangeArray(int[] nums) {
+        ArrayList<Integer> a=new ArrayList<>();
+        ArrayList<Integer> b=new ArrayList<>();
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]<0){b.add(nums[i]);}
+            else{a.add(nums[i]);}
+        }
+        ArrayList<Integer> res=new ArrayList<>();
+        for(int i=0;i<a.size() || i<b.size();i++){
+            res.add(a.get(i));
+            res.add(b.get(i));
+        }
+        int[] ans = new int[res.size()];
+    for (int i = 0; i < res.size(); i++) {
+        ans[i] = res.get(i);
+        }
+        return ans;
+        
+    }
+}
