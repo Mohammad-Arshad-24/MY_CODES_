@@ -1,0 +1,28 @@
+class Solution {
+    public int[] findIntersectionValues(int[] nums1, int[] nums2) {
+        HashMap<Integer,Integer> h=new HashMap<>();
+        HashMap<Integer,Integer> k=new HashMap<>();
+        for(int i=0;i<nums1.length;i++){
+        h.put(nums1[i],h.getOrDefault(nums1[i],1)+1);
+        }
+        for(int i=0;i<nums2.length;i++){
+        k.put(nums2[i],k.getOrDefault(nums2[i],1)+1);
+        }
+        int [] res=new int[2];
+        int c=0;
+        for(int i=0;i<nums1.length;i++){
+            if(k.containsKey(nums1[i])){
+                c++;
+            }
+        }
+        res[0]=c;
+        c=0;
+        for(int i=0;i<nums2.length;i++){
+            if(h.containsKey(nums2[i])){
+                c++;
+            }
+        }
+        res[1]=c;
+        return res;
+    }
+}
