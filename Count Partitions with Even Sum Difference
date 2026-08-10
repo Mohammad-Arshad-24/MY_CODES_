@@ -1,0 +1,23 @@
+class Solution {
+    public int countPartitions(int[] nums) {
+        int c=0;
+        int i=0;
+        while(i<nums.length-1){
+            int fsum=0;
+            int ssum=0;
+            for(int j=0;j<nums.length;j++){
+                if(j<=i){
+                    fsum+=nums[j];
+                }
+                else{
+                    ssum+=nums[j];
+                }
+            }
+             if(Math.abs(fsum-ssum)%2==0){
+                    c++;
+                }
+            i++;
+        }
+        return c;
+    }
+}
