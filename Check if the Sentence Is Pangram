@@ -1,0 +1,9 @@
+class Solution {
+    public boolean checkIfPangram(String sentence) {
+     for(int i=97;i<123;i++){
+        char a =(char)i;
+        if(!sentence.contains(String.valueOf(a))){return false;}
+     }
+     return true;
+    }
+}
