@@ -1,0 +1,18 @@
+class Solution {
+    public int vowelStrings(String[] words, int left, int right) {
+        int res=0;
+        for(int i=left;i<=right;i++){
+            int l=words[i].length()-1;
+            String s=words[i];
+            HashMap<String,Integer> h=new HashMap<>();
+            if(s.charAt(0)=='a' || s.charAt(0)=='e' || s.charAt(0)=='i' || s.charAt(0)=='o' || s.charAt(0)=='u'){
+                if((s.charAt(l)=='a' || s.charAt(l)=='e' || s.charAt(l)=='i' || s.charAt(l)=='o' || s.charAt(l)=='u')){
+                    if(!h.containsKey(s)){
+                    res++;}
+                }
+            }
+            h.put(s,h.getOrDefault(s,1)+1);
+        }
+        return res;
+    }
+}
