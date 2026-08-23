@@ -1,0 +1,28 @@
+class Solution {
+    public List<String> cellsInRange(String s) {
+        boolean found=false;
+        String l="";
+        String r="";
+        ArrayList<String> res=new ArrayList<>();
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i)==':'){
+                found=true;
+                continue;
+            }
+            if(!found){
+                l+=s.charAt(i);
+            }
+            else{
+                r+=s.charAt(i);
+            }
+        }
+        char c1=l.charAt(0);
+        char c2=r.charAt(0);
+        int le=l.charAt(1)-'0';
+        int ri=r.charAt(1)-'0';
+        for (char col=c1;col<=c2;col++) {
+            for (int row=le;row<=ri;row++) {
+                res.add(""+col+row);}}
+        return res;
+    }
+}
