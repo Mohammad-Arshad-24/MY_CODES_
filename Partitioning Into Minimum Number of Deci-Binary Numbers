@@ -1,0 +1,21 @@
+class Solution {
+    public int minPartitions(String n) {
+        int max=0;
+        int i=0;
+        int no=n.charAt(i) - '0';
+        i++;
+        for(int j=0;j<n.length();j++){
+            int temp=no%10;
+            if(temp>max){
+                max=temp;
+            }
+            if(i==n.length()){
+                break;
+            }
+            no/=10;
+            no=n.charAt(i) - '0';
+            i++;
+        }
+        return max;
+    }
+}
