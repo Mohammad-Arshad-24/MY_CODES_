@@ -1,0 +1,21 @@
+class Solution {
+    public int hIndex(int[] citations) {
+    int c=0;
+    int h=citations.length;
+    int hmax=0;
+    for(int i=0;i<citations.length;i++){
+        int res=0;
+        for(int j=0;j<citations.length;j++){
+            if(citations[j]>=h){
+                res++;
+            }
+        }
+        if(res>=h){
+            hmax=h;
+            break;
+        }
+        h--;
+    }
+    return hmax;
+    }
+}
